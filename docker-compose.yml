@@ -1,0 +1,28 @@
+services:  
+  matchminer-ui:
+    platform: linux/x86_64
+    build:
+      #context: /home/sumedha/matchminer/UI/matchminer-ui
+      context: ${MATCHMINER_BUILD_PATH:-/tmp/nowhere}/matchminer-ui
+    image: matchminer/matchminer-ui:latest
+    stop_signal: SIGKILL # service is stateless, can be stopped immediately
+    read_only: true
+    ports:
+    - "1952:80"
+    # depends_on:
+    # - mm-api
+    environment:
+      CONFIG_JSON: /config.json
+    volumes:
+    - ./config.json:/config.json
+    tmpfs:
+    - /tmp
+    - /var/cache/nginx
+    - /var/run
+    networks:
+    - mm-dev-network
+networks:
+  mm-dev-network:
+    # tell docker-compose to create the network
+    external: 
+      name : mm-dev-network

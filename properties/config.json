@@ -24,7 +24,7 @@
       "resources": {
         "oncpro_base": null,
         "ctgov_base": "https://clinicaltrials.gov/ct2/show/",
-        "logo": "matchminer_hkumed_logo2.png",
+        "logo": "dfci.jpg",
         "institution": "DFCI",
         "institutionFull": null,
         "email": "matchminer@example.com",
@@ -43,7 +43,7 @@
       "immunoprofileEmail": null
     }
   },
-  "production":{
+  "prod":{
     "ENV": {
       "elasticsearch": {
         "proxy": "http://localhost:1952/api/es",
@@ -72,7 +72,7 @@
         "institution": "DFCI",
         "institutionFull": null,
         "email": "sbms@hku.hk",
-        "emailSecondary": "deceased_patients@example.com"
+        "emailSecondary": "sbms@hku.hk"
       },
       "EPIC": false,
       "cBio": false,
