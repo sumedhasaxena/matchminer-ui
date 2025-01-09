@@ -24,12 +24,11 @@ FROM nginx:1.24.0-alpine
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY nginx/40-adjust-index-html.sh /docker-entrypoint.d
 COPY nginx/50-add-upstream.sh /docker-entrypoint.d
-COPY set_permissions.sh /docker-entrypoint.d/ #required when using rootless docker
+# required when using rootless docker
+COPY set_permissions.sh /docker-entrypoint.d/ 
 
-# enable the commands below for setting up SSL connection
-# place ssl cert and key under 'certificates' folder and replace 'sslcert' with correct name
+# enable the commands below for setting up SSL connection, with SSL cert info
 # COPY certificates/sslcert.crt /etc/ssl/certs
 # COPY certificates/sslcert.key /etc/ssl/private
-
 COPY --from=builder /ui/dist /usr/share/nginx/html
 RUN chmod +x /docker-entrypoint.d/set_permissions.sh
