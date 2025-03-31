@@ -12,8 +12,8 @@ angular.module("matchminerUiApp")
 	},
 	"loginButtonText": "Login",
 	"devUser": {
-		"token" : "add-dev-user-token-here",
-    "user_id" : "add-dev-user-id-here"
+		"token" : "fb4d6830-d3aa-481b-bcd6-270d69790e11",
+    "user_id" : "577cf6ef2b9920002cef0337"
 	}, 
 	"sessionTimeout": {
 		"idleAllowed": 2700,

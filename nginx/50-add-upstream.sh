@@ -3,7 +3,7 @@ set -euo pipefail
 
 echo "
 upstream api {
-    server ${API_URL:-matchminer-api} max_fails=0;
+    server ${API_URL:-mm-api:5000} max_fails=0;
     keepalive 64;
 }
 " > /tmp/upstream.conf;
