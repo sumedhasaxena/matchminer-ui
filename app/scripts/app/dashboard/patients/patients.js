@@ -21,7 +21,7 @@ angular.module('matchminerUiApp')
 						var trial_status = 'open';
 						var sort = 'sort_order';
 						
-						return TrialMatchService.getTrialMatchesForPatient(patient._id, vital_status, trial_status, patient.SAMPLE_ID, sort);
+						return TrialMatchService.getTrialMatchesForPatient(patient._id, vital_status, trial_status, sort);
 					}],
 					trialSearch: ['ClinicalTrialsService', 'ElasticSearchService', 'TrialMatchService', 'trialMatches', '$q', 'patient', '$stateParams',
 						function(ClinicalTrialsService, ElasticSearchService, TrialMatchService, trialMatches, $q, patient, $stateParams) {
