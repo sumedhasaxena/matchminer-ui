@@ -118,6 +118,17 @@
 							</div>
 						</div>
 
+						<div class="trial-summary-row" layout="column" layout-md="column" layout-gt-md="row">
+							<div>
+								<span class="trial-property">
+									<md-icon md-font-set="material-icons">assignment</md-icon>
+									<span class="trial-property-label">Local protocol ID</span>
+								</span>
+								<span class="trial-property-value" ng-if="ctd.trial.protocol_ids && ctd.trial.protocol_ids.length"> {{ ctd.trial.protocol_ids.join(', ') }}</span>
+								<span class="trial-property-value" ng-if="!ctd.trial.protocol_ids || !ctd.trial.protocol_ids.length"> </span>
+							</div>					
+						</div>
+
 						<div class="trial-summary-row md-block" layout="column" layout-md="column" layout-gt-md="row">
 							<div flex="45">
 								<span class="trial-property">
@@ -126,7 +137,7 @@
 								</span>
 								<span class="trial-property-value">
 									{{ ctd.trial.protocol_no || '-' }}
-								</span>
+								</span>								
 							</div>
 							<div flex="45">
 								<span class="trial-property">
